@@ -127,6 +127,7 @@ export class BasicData {
   }
 }
 
+
 class BasicDataProperty{
   readonly uuid: string;
   isActive: boolean;
