@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {ViewBasicModule} from "../../projects/view-basic/src/view-basic.module";
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    ViewBasicModule.footRoot(),
     AppRoutingModule
   ],
   providers: [],
