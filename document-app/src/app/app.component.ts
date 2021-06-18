@@ -10,7 +10,6 @@ import {DocumentService} from '../services/document.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'web-app';
   selectedIndex = 0;
   navigation: Navigation = new Navigation();
   navMenuList: NavMenuList = new NavMenuList();
