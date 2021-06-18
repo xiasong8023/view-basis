@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'component',
     component: ComponentComponent,
-    children: []
+    children: [
+      {
+        path: 'button', component: ReadonlyMarkdownComponent,
+      }
+    ]
   }
 ];
 

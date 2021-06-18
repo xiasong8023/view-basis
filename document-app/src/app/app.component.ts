@@ -24,6 +24,8 @@ export class AppComponent {
   }
 
   getNavigationList(): void{
+    this.navigation = new Navigation();
+    this.navigationList = new NavigationList();
     this.documentService.getNavigationList().then(res => {
       this.navigationList.items = res.map((item: Navigation) => new Navigation(item));
       this.navInit();
@@ -33,6 +35,7 @@ export class AppComponent {
   }
 
   getNavMenu(): void{
+    this.navMenuList = new NavMenuList();
     this.documentService.getNavMenu(this.navigation.Mark).then(res => {
       this.navMenuList.items = res.map((item: NavMenu) => new NavMenu(item));
     });
@@ -51,8 +54,12 @@ export class AppComponent {
   }
 
   navSelect(navigation: Navigation, index: number): void {
+    this.navigation = navigation;
     this.router.navigate([navigation.Router]).then(() => {
+      this.getNavMenu();
       this.selectedIndex = index;
+    }).catch((err) => {
+      console.log(err);
     });
   }
 }

@@ -23,9 +23,11 @@
   flex: 0 0 16.66666667%;
 
   &-img {
-    width: 32px;
-    height: 32px;
     user-select: none;
+    font-size: 26px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
   }
 
   &-title {
@@ -44,6 +46,9 @@
 }
 .tabs{
   margin-right: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main{
@@ -61,4 +66,31 @@
     flex: auto;
     background: white;
   }
+}
+.github{
+  margin-left: 3rem;
+  padding-top: 13px;
+}
+
+:host /deep/ .update-item-group-title .ant-menu-item-group-title{
+  padding: 8px 48px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+
+  &:after{
+    position: relative;
+    top: 12px;
+    display: block;
+    width: calc(100% - 20px);
+    height: 1px;
+    background: #f0f0f0;
+    content: "";
+  }
+}
+
+:host /deep/ .no-update-item-group-title .ant-menu-item-group-title{
+  height: 0;
+  line-height: 0;
+  padding: 0;
 }
