@@ -1,0 +1,33 @@
+<nz-layout class="layout">
+  <nz-header class="header">
+      <div class="logo" (click)="navSelect(navigationList.first, 0)">
+        <img src="https://tse4-mm.cn.bing.net/th/id/OIP.yrfQG4t8AYyOHTE7P7BUcwHaHp?pid=Api&rs=1" alt="" class="logo-img">
+        <label class="logo-title">view-basic</label>
+      </div>
+      <div>
+        <label class="mr-5">🔥 <a href="http://172.16.85.60:4873/-/web/detail/pengesoft-weapp">文档网站（内网）</a></label>
+        <label>🌈 <a href="http://172.16.89.60/xia.s/pengesoft-weapp">文档网站（GitLab）</a></label>
+      </div>
+      <div class="tabs">
+        <nz-tabset [(nzSelectedIndex)]="selectedIndex" nzTabPosition="bottom">
+          <nz-tab [nzTitle]="item.Name" (nzClick)="navSelect(item, i)" *ngFor="let item of navigationList.items;index as i"></nz-tab>
+        </nz-tabset>
+      </div>
+  </nz-header>
+  <nz-content class="main">
+    <nz-sider class="main-side" nzTheme="light" nzWidth="16%">
+      <ul>
+        <li nz-menu-group [nzTitle]="menu.Name" *ngFor="let menu of navMenuList.items">
+          <ul nz-menu>
+            <li nz-menu-item nzMatchRouter *ngFor="let item of menu.Children">
+              <a [routerLink]="[item.Router]">{{item.Name}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-content class="main-content">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-content>
+</nz-layout>

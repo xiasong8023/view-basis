@@ -1,0 +1,12 @@
+[
+  {
+    "Mark": "document",
+    "Name": "文档",
+    "Router": "/document/started-quickly"
+  },
+  {
+    "Mark": "component",
+    "Name": "组件",
+    "Router": "/component/started-quickly"
+  }
+]

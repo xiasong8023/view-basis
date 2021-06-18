@@ -1,0 +1,13 @@
+[
+  {
+    "Name": "",
+    "Children": [
+      {
+        "Name": "快速上手",
+        "Router": "/document/started-quickly",
+        "ReadName": "started-quickly",
+        "Mark": "started-quickly"
+      }
+    ]
+  }
+]
