@@ -1,20 +1,19 @@
 export class HttpParam{
   map: Map<string, any> = new Map<string, any>();
 
-  constructor(option: {
-    map?: Map<string, any>
-  } = {}) {
+  constructor(option: Partial<HttpParam> = {}) {
     this.map = option.map || new Map<string, any>();
   }
-  has(name: string){
+
+  has(name: string): boolean{
     return this.map.has(name);
   }
 
-  get(name: string){
+  get(name: string): any{
     return this.map.get(name.toLowerCase()) || null;
   }
 
-  keys(){
+  keys(): any{
     return this.map.keys();
   }
 
@@ -23,11 +22,11 @@ export class HttpParam{
     return new HttpParam({map: this.map});
   }
 
-  set(name: string, value: any){
+  set(name: string, value: any): void{
     this.map.set(name, value);
   }
 
-  delete(name: string){
+  delete(name: string): void{
     this.map.delete(name);
   }
 }

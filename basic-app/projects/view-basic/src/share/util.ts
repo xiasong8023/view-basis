@@ -1,7 +1,7 @@
 export class Util{
 
   public static uuid(): string{
-    function S4() {
+    function S4(): string {
       return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
     }
     return (S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4());
@@ -44,5 +44,5 @@ export class Util{
     }
     return `${url}${(url.indexOf('?') >= 0) ? '&' : '?'}${param}`;
   }
-
 }
+

@@ -49,7 +49,7 @@ export class BasicData {
 
   /**
    * 通过Key确认是否存在属性
-   * @param key
+   * @ param key
    */
   public hasPropertyByKey(key: string): boolean{
     return this.hasOwnProperty(key);
@@ -57,7 +57,7 @@ export class BasicData {
 
   /**
    * 通过key获取属性
-   * @param key
+   * @ param key
    */
   public getPropertyByKey(key: string): any{
     if (this.hasPropertyByKey(key)){
@@ -103,7 +103,7 @@ export class BasicData {
   }
   /**
    * 时间格式
-   * @param date
+   * @ param date
    */
   public formatData(date: Data | string = ''): Data | undefined{
     if (!date){
@@ -114,7 +114,8 @@ export class BasicData {
       if (date === '0001-01-01 00:00:00') {
         return;
       }
-      const dateArr = date.match(/\d+/g)!.map(item => {
+      const dataArrCode = date.match(/\d+/g) || [];
+      const dateArr = dataArrCode.map(item => {
         return Number.parseInt(item, 10);
       });
       date = new Date(dateArr[0], dateArr[1] - 1, dateArr[2], dateArr[3] || 0, dateArr[4] || 0, dateArr[5] || 0);

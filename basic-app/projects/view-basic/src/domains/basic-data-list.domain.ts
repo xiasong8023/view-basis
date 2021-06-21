@@ -52,7 +52,7 @@ export class BasicDataList<T extends BasicData> extends BasicData{
   }
 
   append(item: T): BasicDataList<T>{
-    if(!item){
+    if (!item){
       return this;
     }
     this.items.unshift(item);
@@ -61,7 +61,7 @@ export class BasicDataList<T extends BasicData> extends BasicData{
   }
 
   resetIndex(start: number = 0): void{
-    for (let i = start; i< this.count; i++) {
+    for (let i = start; i < this.count; i++) {
       this.items[i].indexOfList = i;
     }
   }
