@@ -9,7 +9,7 @@ import {Util} from '../share';
   providedIn: 'root'
 })
 export class Request {
-  private static base = './api/';
+  private static base = '';
   private _base: string;
   private _timeStamp = true;
   constructor(
@@ -51,6 +51,7 @@ export class Request {
         });
     }));
   }
+
   post<T>(url: string, httpParams?: HttpParams, httpHeaders?: HttpHeaders): Promise<T>{
     return new Promise(((resolve, reject) => {
       this.http.post<T>(
